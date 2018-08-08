@@ -3,7 +3,7 @@ require_relative '../lib/rbcrypto'
 describe Rbcrypto do
 
     it "should show True" do
-      Rbcrypto.validate('mpXwg4jMtRhuSpVq4xS3HFHmCmWp9NyGKt','--btc').should eql true
+      Rbcrypto.validate('mpXwg4jMtRhuSpVq4xS3HFHmCmWp9NyGKt','--btc',:testnet).should eql true
     end
 
     it "should show False" do

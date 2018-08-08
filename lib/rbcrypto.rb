@@ -2,8 +2,8 @@ require "Bitcoin"
 require "eth"
 
 class Rbcrypto
-  def self.validate(address,coin = "--btc")
-    validator = Validate.new(address,coin)
+  def self.validate(address,coin = "--btc", network = :testnet)
+    validator = Validate.new(address,coin,network)
     validator.validate
   end
   def self.method_missing(m, *args, &block)
@@ -12,7 +12,7 @@ class Rbcrypto
 end
 
 class Rbcrypto::Validate
-  def initialize(address,coin)
+  def initialize(address,coin,network)
     @address = address
     @coin = coin
   end
@@ -20,7 +20,7 @@ class Rbcrypto::Validate
   def validate
     case @coin
     when "--btc"
-      Bitcoin::network = :testnet
+      Bitcoin::network = network
       Bitcoin.valid_address?(@address)
     when "--eth"
       Eth::Utils.valid_address?(@address)
