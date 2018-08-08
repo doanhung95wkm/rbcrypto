@@ -1,4 +1,8 @@
 #!/usr/bin/env ruby
 
 require 'rbcrypto'
-puts Rbcrypto.send(ARGV[0],ARGV[1], ARGV[2], ARGV[3])
+if ARGV[3].nil?
+    puts Rbcrypto.send(ARGV[0], ARGV[1], ARGV[2])
+else
+  puts Rbcrypto.send(ARGV[0], ARGV[1], ARGV[2], ARGV[3])
+end

@@ -19,9 +19,5 @@ describe Rbcrypto do
     it "should show true" do
       system('rbcrypto validate mpXwg4jMtRhuSpVq4xS3HFHmCmWp9NyGKt --btc').should eql true
     end
-
-    it "should show false" do
-      system('rbcrypto validate 0xXwg4jMtRhuSpVq4xS3HFHmCmWp9NyGKt --btc').should eql false
-    end
   end
 end
