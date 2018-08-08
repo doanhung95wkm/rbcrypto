@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'rbcrypto'
+puts Rbcrypto.send(ARGV[0],ARGV[1], ARGV[2])
